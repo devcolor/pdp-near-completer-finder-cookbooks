@@ -44,3 +44,9 @@ against a newer pdp-near-completer-finder, update the commit above.
 
 The bundled data is synthetic until a college uploads its own. Nothing built on synthetic data is a
 finding about real students or institutions.
+
+## Credits
+
+Built at the 2026 /dev/color Datathon by the GIA (Growing Inland Achievement) team: Jasmine Omeke
+(squad lead), Kavan Brandon, Shavant Thomas, Aneesa Valentine. Companion to the
+[pdp-near-completer-finder](https://github.com/devcolor/pdp-near-completer-finder) dashboard.
