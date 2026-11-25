@@ -15,7 +15,7 @@ who knows students and programs but not software.
    comes from", and the plays.
 3. `RUNBOOK_UPLOADS.md`: for questions about uploading.
 4. Only if those don't answer it: the app code in
-   `../gia-datathon/playground/server_application/app/institution_dashboard/data.py`. Cite the
+   `../pdp-near-completer-finder/playground/server_application/app/institution_dashboard/data.py`. Cite the
    function, and say that the answer came from the code.
 
 Read the relevant sections each time. The documents change, so don't answer from memory.

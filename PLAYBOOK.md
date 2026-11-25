@@ -1,6 +1,6 @@
 # Stop-out and near-completer playbook
 
-How to use the GIA datathon dashboard (in the `gia-datathon` repo) to find students who left close to
+How to use the GIA datathon dashboard (in the `pdp-near-completer-finder` repo) to find students who left close to
 finishing, decide who reaches out, and check the numbers yourself.
 
 > **The data can change at any time.** Each college's CSVs can be replaced through the dashboard's
@@ -11,8 +11,8 @@ finishing, decide who reaches out, and check the numbers yourself.
 > **Until a college uploads its own files, the data is synthetic.** Nothing built on it is a finding
 > about real students or either college. Say so whenever you share a number.
 
-Paths are relative to the `gia-datathon` repo unless they start with `scripts/` or `sql/` (this repo).
-The scripts expect the two repos side by side. If they aren't, set `GIA_REPO=/path/to/gia-datathon`.
+Paths are relative to the `pdp-near-completer-finder` repo unless they start with `scripts/` or `sql/` (this repo).
+The scripts expect the two repos side by side. If they aren't, set `GIA_REPO=/path/to/pdp-near-completer-finder`.
 Function names refer to `playground/server_application/app/institution_dashboard/data.py` unless
 another file is named.
 
@@ -223,7 +223,7 @@ From Python (a notebook, for example), both work as functions:
 
 ```python
 import sys
-sys.path.append("/path/to/gia-datathon-cookbooks/scripts")
+sys.path.append("/path/to/pdp-near-completer-finder-cookbooks/scripts")
 from dashboard_counts import dashboard_counts
 from verify_against_api import compare
 

@@ -50,7 +50,7 @@ You can skip them, or ask an AI skill to explain a part.
    terminal. Your team decides which, and who pays for it.
 2. **This repo open in Claude Code.** A technical teammate can set this up with you once. The
    skills only appear when Claude Code is started inside this repo.
-3. **For `data-health-check` only:** the main dashboard repo (`gia-datathon`) next to this one on
+3. **For `data-health-check` only:** the main dashboard repo (`pdp-near-completer-finder`) next to this one on
    the same computer. A technical teammate sets this up.
 
 Skills only appear in a session started **after** they were added. If `/toolbox` isn't recognized,

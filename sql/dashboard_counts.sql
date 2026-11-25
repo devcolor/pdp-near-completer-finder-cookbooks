@@ -1,5 +1,5 @@
 -- The dashboard's executive numbers for one college, with the default filters (everything "all"/"any").
--- Mirrors gia-datathon/playground/server_application/app/institution_dashboard/data.py.
+-- Mirrors pdp-near-completer-finder/playground/server_application/app/institution_dashboard/data.py.
 -- Run it through scripts/dashboard_counts.py, which imports the CSVs into these tables and sets:
 --   students_raw  students.csv, plus two columns the script adds: program, credits_remaining
 --   profile       student_institutional_profile.csv

@@ -193,7 +193,7 @@ students or either college.
   "24 Fall", Spring 2025 as "25 Spring". Academic years start in Fall, so both belong to `2024-25`
   (the `pdp_year` in the files). Until 2026-11-11 the dashboard showed Fall as "Winter" of the
   academic year ("24-25 Winter"), so notes or screenshots from before then may say Winter
-  (gia-datathon PR #41).
+.
 - **What to do:** when matching a term to a `pdp_year`, a Fall term goes with the year it starts.
   `dashboard_counts.py` shows the full term names.
 - **Also in:** [Playbook, Play 8](PLAYBOOK.md#first-check-whether-the-term-is-really-missing).
@@ -256,7 +256,7 @@ students or either college.
 #### C15. The hosted dashboard is open to anyone with the link
 
 - **What's going on:** the dashboard has no sign-in. A hosted copy deployed to Vercel (see `docs/deploy.md`
-  in gia-datathon) opens to anyone who has its address, and so does its data
+  in pdp-near-completer-finder) opens to anyone who has its address, and so does its data
   service. Anything uploaded there can be seen by them. (The datathon's own hosted copy was checked
   on 2026-11-11, found open, and paused on 2026-11-24.)
 - **What to do:** never upload real student records to a hosted copy. Add a sign-in before anyone

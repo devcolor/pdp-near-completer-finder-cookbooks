@@ -2,7 +2,7 @@
 
 Reads the same folder the app reads (a saved upload first, else the base files), loads the CSVs into
 an in-memory SQLite database, and runs sql/dashboard_counts.sql, which mirrors build_dashboard in
-gia-datathon/playground/server_application/app/institution_dashboard/data.py.
+pdp-near-completer-finder/playground/server_application/app/institution_dashboard/data.py.
 
 Command line:
     python scripts/dashboard_counts.py <cmc|college_two> [threshold] [--data-dir DIR] [--upload-dir DIR] [--csv]
@@ -11,7 +11,7 @@ Command line:
     0, 3, 6, 9, 12, 15, 24 (a credit band; 0 means no credits applied to the program yet).
 
 From Python (a notebook, for example):
-    import sys; sys.path.append("<path to gia-datathon-cookbooks>/scripts")
+    import sys; sys.path.append("<path to pdp-near-completer-finder-cookbooks>/scripts")
     from dashboard_counts import dashboard_counts
     result = dashboard_counts("cmc")         # the dashboard's default, or dashboard_counts("cmc", 9)
     result.rows        # list of {"section", "item", "value"} dicts: pandas.DataFrame(result.rows)
@@ -66,10 +66,10 @@ class Result:
 
 
 def default_data_dir() -> Path:
-    """$DASHBOARD_DATA_DIR, else the synthetic data in $GIA_REPO or the gia-datathon repo next to this one."""
+    """$DASHBOARD_DATA_DIR, else the synthetic data in $GIA_REPO or the pdp-near-completer-finder repo next to this one."""
     if os.environ.get("DASHBOARD_DATA_DIR"):
         return Path(os.environ["DASHBOARD_DATA_DIR"])
-    repo = Path(os.environ.get("GIA_REPO") or Path(__file__).resolve().parent.parent.parent / "gia-datathon")
+    repo = Path(os.environ.get("GIA_REPO") or Path(__file__).resolve().parent.parent.parent / "pdp-near-completer-finder")
     return repo / "gia-pre-implementation" / "synthetic-datasets"
 
 

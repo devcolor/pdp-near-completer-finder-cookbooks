@@ -1,6 +1,6 @@
 # Deploying the stop-out dashboard on any platform
 
-How to run the dashboard from the `gia-datathon` repo on a platform other than Vercel: a college's own
+How to run the dashboard from the `pdp-near-completer-finder` repo on a platform other than Vercel: a college's own
 servers, a container platform, or a single virtual machine. It lists the minimum files to copy, the
 settings to give, and how to check the result.
 
@@ -23,7 +23,7 @@ below. The test ran in production mode, on a Mac, without Vercel. The results ar
 
 ## The minimum files
 
-Paths are inside the `gia-datathon` repo. Keep the folder layout the same: the data service finds the
+Paths are inside the `pdp-near-completer-finder` repo. Keep the folder layout the same: the data service finds the
 data model, and by default the data files, by relative path.
 
 ### Data service
@@ -169,7 +169,7 @@ test the static route yourself.
 An upload is saved as files in `DASHBOARD_UPLOAD_DIR`. For uploads to work properly:
 
 - **The folder must be writable.** Vercel's app folder is read-only, which is why the Vercel setup
-  saves uploads to `/tmp/dashboard-uploads` (gia-datathon PR #40).
+  saves uploads to `/tmp/dashboard-uploads`.
 - **It must survive restarts.** `/tmp` on Vercel is cleared when a new copy of the service starts, so
   uploads there disappear
   ([N1](KNOWN_ISSUES.md#n1-uploading-on-the-hosted-dashboard)).
@@ -197,14 +197,14 @@ The synthetic files are made up. For real data, follow your college's rules on w
 records may be stored. The upload folder will hold those records, and so will the data folder if
 you replace the base files.
 
-## How the current Vercel setup maps to this
+## How a Vercel setup maps to this
 
-For reference when copying the existing deployment. Two Vercel projects deploy from the repo:
+For reference if you deploy to Vercel (step by step: `docs/deploy.md` in pdp-near-completer-finder). Two Vercel projects deploy from the repo:
 
 | Vercel project | Folder | Build | Settings |
 | --- | --- | --- | --- |
-| `gia-datathon-api` | `playground/server_application` | `vercel.json` copies the data files into the app folder (`cp -R ../../gia-pre-implementation/synthetic-datasets synthetic-datasets`). `.vercelignore` at the repo root leaves out what isn't needed | `APP_ENV`, `DATABASE_URL`, `CORS_ORIGINS`, `DASHBOARD_DATA_DIR`, and `DASHBOARD_UPLOAD_DIR` from `.env.production` |
-| `gia-datathon-web` | `playground/client_application` | Next.js default | `NEXT_PUBLIC_API_BASE_URL`, `NEXT_PUBLIC_APP_ENV` |
+| `<your-api-project>` | `playground/server_application` | `vercel.json` copies the data files into the app folder (`cp -R ../../gia-pre-implementation/synthetic-datasets synthetic-datasets`). `.vercelignore` at the repo root leaves out what isn't needed | `APP_ENV`, `DATABASE_URL`, `CORS_ORIGINS`, `DASHBOARD_DATA_DIR`, and `DASHBOARD_UPLOAD_DIR` from `.env.production` |
+| `<your-web-project>` | `playground/client_application` | Next.js default | `NEXT_PUBLIC_API_BASE_URL`, `NEXT_PUBLIC_APP_ENV` |
 
 The values are stored in Vercel and weren't read for this guide.
 

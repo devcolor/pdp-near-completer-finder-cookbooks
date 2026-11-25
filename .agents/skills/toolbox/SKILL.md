@@ -11,14 +11,14 @@ expert (advisor, dean, institutional researcher), not an engineer. Write for the
 ## Steps
 
 1. **See what is actually present.** Don't trust memory or the catalog alone. Scripts may have been
-   removed. From the root of this repo (gia-datathon-cookbooks):
+   removed. From the root of this repo (pdp-near-completer-finder-cookbooks):
 
    ```bash
    ls .agents/skills .claude/skills scripts sql *.md
    ```
 
-   If the main repo is next to this one (`../gia-datathon`, or `$GIA_REPO`), also list
-   `../gia-datathon/.agents/skills`.
+   If the main repo is next to this one (`../pdp-near-completer-finder`, or `$GIA_REPO`), also list
+   `../pdp-near-completer-finder/.agents/skills`.
 
 2. **Read `TOOLBOX.md`** for the explanation of each item: what it's for, who it's for, how to start
    it, and whether it changes anything.

@@ -54,7 +54,7 @@ notebook ([Play 6](PLAYBOOK.md#play-6-check-the-numbers-with-sql)). On Windows, 
 | [`scripts/dashboard_counts.py`](scripts/dashboard_counts.py) | Works out the dashboard's executive numbers from the CSV files, the same way the app does. It reads uploaded files if there are any. It stops with a plain message on data problems that would break the dashboard | Technical | No | `python3 scripts/dashboard_counts.py cmc 9` |
 | [`scripts/verify_against_api.py`](scripts/verify_against_api.py) | Compares those numbers with a running dashboard and lists any differences | Technical | No | `python3 scripts/verify_against_api.py cmc 9` |
 | [`sql/dashboard_counts.sql`](sql/dashboard_counts.sql) | The query behind `dashboard_counts.py`, for porting to a college's own database | Technical | No | Run through `dashboard_counts.py` |
-| [`scripts/check_cookbook.py`](scripts/check_cookbook.py) | One free, read-only check that the cookbook still matches the dashboard: tests, links, skill copies, documented behavior, and the numbers. Run it before sharing the cookbook and after gia-datathon changes | Technical | No | `python3 scripts/check_cookbook.py` |
+| [`scripts/check_cookbook.py`](scripts/check_cookbook.py) | One free, read-only check that the cookbook still matches the dashboard: tests, links, skill copies, documented behavior, and the numbers. Run it before sharing the cookbook and after pdp-near-completer-finder changes | Technical | No | `python3 scripts/check_cookbook.py` |
 | [`tests/test_dashboard_counts.py`](tests/test_dashboard_counts.py) | Checks `dashboard_counts.py` against hand-worked answers on tiny made-up files. `tests/test_check_cookbook.py` checks the cookbook check itself | Technical | No | `python3 -m unittest discover -s tests` |
 
 Details and options: [Playbook, Play 6](PLAYBOOK.md#play-6-check-the-numbers-with-sql).
@@ -67,7 +67,7 @@ Details and options: [Playbook, Play 6](PLAYBOOK.md#play-6-check-the-numbers-wit
 | Student services, Academic, Financial | `/dashboard/student-services`, `/dashboard/academic`, `/dashboard/financial` | The same data, from each office's side | Anyone | No |
 | Upload | `/dashboard/upload` | Replace a college's data. See [the upload runbook](RUNBOOK_UPLOADS.md) | Anyone | **Yes** |
 
-A hosted copy, if your team deploys one (see `docs/deploy.md` in gia-datathon), is open to anyone with the link
+A hosted copy, if your team deploys one (see `docs/deploy.md` in pdp-near-completer-finder), is open to anyone with the link
 ([C15](KNOWN_ISSUES.md#c15-the-hosted-dashboard-is-open-to-anyone-with-the-link)), and uploads
 there aren't tested ([N1](KNOWN_ISSUES.md#n1-uploading-on-the-hosted-dashboard)).
 
@@ -89,7 +89,7 @@ What the pages call behind the scenes. Useful for scripts and spreadsheets.
 The interactive list of every call is at `/docs` on the data service, for example
 http://localhost:8000/docs.
 
-## Skills and tools in the main repo (gia-datathon)
+## Skills and tools in the main repo (pdp-near-completer-finder)
 
 | Tool | What it's for | Who | Changes things? |
 | --- | --- | --- | --- |
@@ -104,7 +104,7 @@ These skills are read from the main repo's `.claude/skills/` (Claude Code) and `
 
 ## Commands in the main repo
 
-Run from `gia-datathon/playground/` unless noted.
+Run from `pdp-near-completer-finder/playground/` unless noted.
 
 | Command | What it does | Changes things? |
 | --- | --- | --- |
@@ -123,5 +123,5 @@ Run from `gia-datathon/playground/` unless noted.
   `.agents/skills/<name>/SKILL.md` (they must stay identical), and its row above. The `toolbox`
   skill reads the folders, so it notices a missing skill even before this page is updated.
 - **Adding or removing a script:** update its row, and any skill that uses it.
-- **Before sharing the cookbook, and after gia-datathon changes:** run
+- **Before sharing the cookbook, and after pdp-near-completer-finder changes:** run
   `python3 scripts/check_cookbook.py`. See [Keeping the cookbook current](README.md#keeping-the-cookbook-current).

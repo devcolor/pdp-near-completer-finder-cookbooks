@@ -1,5 +1,5 @@
 """One free, manual check that the cookbook still matches the dashboard. Run it before sharing the
-cookbook, and after gia-datathon changes.
+cookbook, and after pdp-near-completer-finder changes.
 
     python3 scripts/check_cookbook.py                       # against a local copy (localhost:8000)
     python3 scripts/check_cookbook.py --api https://<your-api>/api/v1   # or a hosted copy
@@ -112,8 +112,8 @@ def get(api: str, path: str) -> tuple[int, dict | None]:
 
 
 def checked_commit(root: Path) -> str | None:
-    """The gia-datathon commit the README says the cookbook was last checked against."""
-    match = re.search(r"Last checked against gia-datathon commit `([0-9a-f]+)`", (root / "README.md").read_text())
+    """The pdp-near-completer-finder commit the README says the cookbook was last checked against."""
+    match = re.search(r"Last checked against pdp-near-completer-finder commit `([0-9a-f]+)`", (root / "README.md").read_text())
     return match.group(1) if match else None
 
 
@@ -132,16 +132,16 @@ def run(api: str) -> int:
     skills = different_skill_files(REPO)
     report.check(not skills, ".claude/skills and .agents/skills are identical", "differ: " + ", ".join(skills))
 
-    # Which gia-datathon version the docs were last checked against.
+    # Which pdp-near-completer-finder version the docs were last checked against.
     commit = checked_commit(REPO)
-    gia_repo = Path(os.environ.get("GIA_REPO") or REPO.parent / "gia-datathon")
+    gia_repo = Path(os.environ.get("GIA_REPO") or REPO.parent / "pdp-near-completer-finder")
     head = subprocess.run(["git", "-C", str(gia_repo), "rev-parse", "--short", "HEAD"],
                           capture_output=True, text=True).stdout.strip() if gia_repo.is_dir() else ""
     if commit and head and not head.startswith(commit) and not commit.startswith(head):
-        report.line("INFO", "gia-datathon has moved on",
+        report.line("INFO", "pdp-near-completer-finder has moved on",
                     f"README says {commit}, local checkout is {head}: review what changed, then update the README")
     elif commit:
-        report.line("INFO", "README last checked against gia-datathon", commit)
+        report.line("INFO", "README last checked against pdp-near-completer-finder", commit)
 
     # What the docs say about the dashboard.
     try:

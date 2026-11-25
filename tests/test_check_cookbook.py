@@ -23,7 +23,7 @@ class TermLabelTest(unittest.TestCase):
         ]), [])
 
     def test_old_winter_labels_fail(self):
-        """The labels before gia-datathon PR #41."""
+        """The labels the dashboard used before 2026-11-11."""
         problems = term_label_problems([{"value": "Fall 2024", "label": "24-25 Winter"}])
         self.assertEqual(len(problems), 1)
         self.assertIn("24-25 Winter", problems[0])
