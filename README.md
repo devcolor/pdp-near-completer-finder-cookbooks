@@ -1,7 +1,7 @@
-# gia-datathon-cookbooks
+# pdp-near-completer-finder-cookbooks
 
 Guides, AI skills and scripts for using, checking and deploying the GIA stop-out and near-completer
-dashboard from the [gia-datathon](https://github.com/devcolor/gia-datathon) repo.
+dashboard from the [pdp-near-completer-finder](https://github.com/devcolor/pdp-near-completer-finder) repo.
 
 **Not an engineer? Start with [GETTING_STARTED.md](GETTING_STARTED.md).**
 
